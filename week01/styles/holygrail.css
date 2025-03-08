@@ -1,0 +1,78 @@
+/* Reset some default browser styles */
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation */
+nav {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    grid-column: 1 / -1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Layout */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "main right";
+    grid-template-columns: 2fr 1fr; /* Main content larger */
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Main Content */
+main {
+    background-color: #f4f4f4;
+    padding: 20px;
+    grid-area: main;
+}
+
+/* Right Sidebar */
+aside {
+    background-color: #ddd;
+    padding: 20px;
+    grid-area: right;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
