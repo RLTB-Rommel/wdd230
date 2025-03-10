@@ -1,0 +1,72 @@
+@media (min-width: 768px) {
+    /* Keep header center-aligned but ensure profile image stays beside name */
+    header {
+        justify-content: center;
+    }
+
+    /* Profile image floating effect (shadow in larger view) */
+    #photo {
+        border: none; /* Remove thin border */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Floating effect */
+    }
+
+    /* Center the main content */
+    main {
+        max-width: 75%;
+        margin: auto;
+    }
+
+    /* Main layout - Learning Activities card is twice as wide */
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Learning Activities (2x), Information (1x) */
+        gap: 20px;
+        max-width: 80%;
+        margin: auto;
+    }
+
+    /* Add shadow effect to cards in larger view */
+    .card {
+        border: none; /* Remove thin border */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Ensure space between cards */
+    .card + .card {
+        margin-top: 0; /* No need for margin since they are side by side */
+    }
+
+    /* H2 background color remains */
+    .card h2 {
+        background-color: #A4C3B2; /* Subtle greenish-gray */
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+    
+    .inline-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Adjust spacing */
+        flex-wrap: wrap;
+    }
+    
+    .inline-content p {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust spacing */
+        margin: 0;
+    }
+    
+    .ball, .flag {
+        width: 20px; /* Adjust size */
+        height: auto;
+    }
+    
+    #lastModified {
+        margin-top: 10px; /* Adjust spacing below */
+        text-align: center;
+    }
+}
