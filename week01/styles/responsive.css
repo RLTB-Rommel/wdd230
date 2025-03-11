@@ -1,0 +1,31 @@
+/* Larger Screens */
+body {
+    font-size: 1.2rem;
+}
+
+/* Larger Headings */
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Desktop Navigation */
+nav {
+    text-align: center;
+    padding: 15px 50px;
+}
+
+nav a {
+    font-size: 1.2rem;
+    margin: 15px;
+}
+
+/* Layout Grid for Larger Screens */
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
