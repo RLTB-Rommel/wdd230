@@ -1,159 +1,70 @@
-/* Base styles (Mobile-first) */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F8F9FA; /* Light grayish white */
-    color: #333;
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* Center-aligned header */
-header {
-    background-color: #255aa0; /* Dark blue-gray */
+/* Adjusting contrast */
+h1, h2 {
+    color: #2a2a2a;
+}
+
+/* Hamburger Menu */
+#hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
     color: white;
-    text-align: center;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-/* Profile image */
-#photo {
-    width: 75px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 0;
-    border: 1px solid #A4C3B2; /* Subtle greenish-gray border in mobile */
-}
-
-/* Name styling */
-header span {
-    font-size: 1.5rem;
-    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
 
 /* Navigation */
 nav {
-    background-color: #1E3A5F; /* Dark blue-gray */
-    text-align: center;
+    background-color: #1E3A5F;
     padding: 0.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-nav ul li {
-    display: inline;
-}
-
-/* Navigation link styles */
 nav ul li a {
     color: white;
     text-decoration: none;
-    display: block;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease-in-out;
 }
 
-/* Background changes on hover */
-nav ul li a:hover {
-    background-color: #3C6E71; /* Muted blue-gray */
-}
+/* Hide menu in mobile */
+@media (max-width: 768px) {
+    #hamburger-menu {
+        display: block;
+    }
 
-/* Center align h1 */
-h1 {
-    text-align: center;
-    color: #3D5A80; /* Deep muted blue */
-}
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1E3A5F;
+    }
 
-/* Horizontal line below h1 */
-.line {
-    width: 100%;
-    height: 0.5px;
-    background-color: #3C6E71; /* Muted blue-gray */
-    margin: 10px 0;
-}
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
 
-/* Main layout */
-main { 
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    nav ul li {
+        padding: 10px;
+    }
 
-/* Card styling (Learning Activities & Information) */
-.card {
-    background-color: #D9E2EC; /* Soft light blue-gray */
-    border-radius: 8px;
-    padding: 1rem;
-    border: 1px solid #A4C3B2; /* Subtle greenish-gray border in mobile */
-}
-
-/* Space between sections */
-.card + .card {
-    margin-top: 20px;
-}
-
-/* List styling */
-.card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.card ul li {
-    margin-bottom: 5px;
-}
-
-/* H2 background color */
-.card h2 {
-    background-color: #A4C3B2; /* Subtle greenish-gray */
-    padding: 0.5rem;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    background-color: #1E3A5F; /* Dark blue-gray */
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column; /* Stack items vertically in mobile */
-    align-items: center;
-    gap: 3px; /* Reduced spacing for cleaner stacking */
-}
-
-/* Footer ball images */
-footer img.ball {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    vertical-align: middle;
-}
-
-/* Last modified text - Different color */
-footer p#lastModified {
-    color: #dfdf1b; /* Muted Purple-Gray */
-    font-weight: bold;
-    margin-top: 5px; /* Minimal space from previous elements */
-}
-
-/* Country flag */
-footer img.flag {
-    width: 20px;
-    height: auto;
-    margin-left: 5px;
-    vertical-align: middle;
+    nav.open {
+        display: flex;
+    }
 }

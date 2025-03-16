@@ -1,0 +1,29 @@
+/* Normalize base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Ensure good contrast for text */
+h1, h2, h3, p, a {
+    color: #1a1a1a;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0073e6;
+}
