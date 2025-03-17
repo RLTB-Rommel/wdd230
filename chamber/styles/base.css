@@ -84,9 +84,10 @@ nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: 10px;
+    text-decoration: none;
 }
 
-/* Current Events Section */
+/* Sections */
 .events, .weather-card, .spotlights {
     padding: 20px;
     margin: 20px auto;
@@ -111,16 +112,33 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Footer */
+/* ✅ Footer Fix: Align text properly */
 footer {
     background-color: #1E3A5F; /* Dark blue-gray */
     color: white;
     text-align: center;
     padding: 1rem;
     display: flex;
-    flex-direction: column; /* Stack items vertically in mobile */
+    flex-direction: column; /* Default: stacked on small screens */
     align-items: center;
-    gap: 3px; /* Reduced spacing for cleaner stacking */
+    gap: 10px; /* Spacing between footer elements */
+}
+
+/* ✅ Footer Fix for Large Screens */
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row; /* Align items in one row */
+        align-items: center space-between; /* Space them properly */
+        padding: 1rem 20px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .footer-content {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 }
 
 /* Light Mode (Default) */
@@ -170,7 +188,45 @@ body {
     color: yellow;
 }
 
-/* Footer ball images */
+/* Footer Base Styles */
+footer {
+    background-color: #1E3A5F; /* Dark blue-gray */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; /* Default: Stack items for mobile */
+    align-items: center;
+    gap: 5px; /* Minimal spacing */
+}
+
+/* Center the main footer content in a row on larger screens */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    justify-content: center; /* Centers content */
+    text-align: center; /* Ensures all text is centered */
+    max-width: 90%;
+}
+
+/* Ensure "Last Modified" appears at the bottom */
+#lastModified {
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #dfdf1b; /* Highlighted color */
+    margin-top: 10px; /* Space from main footer content */
+}
+
+/* Responsive Footer - Keep everything in one line for larger screens */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Align elements in one row */
+        gap: 15px; /* Adjust spacing between elements */
+    }
+}
+
+
+
+/* ✅ Footer Styles */
 footer img.ball {
     width: 12px;
     height: 12px;
@@ -178,11 +234,11 @@ footer img.ball {
     vertical-align: middle;
 }
 
-/* Last modified text - Different color */
+/* Last modified text */
 footer p#lastModified {
     color: #dfdf1b; /* Muted Purple-Gray */
     font-weight: bold;
-    margin-top: 5px; /* Minimal space from previous elements */
+    margin-top: 5px;
 }
 
 /* Country flag */
