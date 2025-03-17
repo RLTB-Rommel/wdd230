@@ -123,6 +123,53 @@ footer {
     gap: 3px; /* Reduced spacing for cleaner stacking */
 }
 
+/* Light Mode (Default) */
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Dark mode header */
+.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+/* Dark mode navigation */
+.dark-mode nav {
+    background-color: #222;
+}
+
+/* Dark mode sections */
+.dark-mode .events, 
+.dark-mode .weather-card, 
+.dark-mode .spotlights {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* Dark mode button styles */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+}
+
+.dark-mode #dark-mode-toggle {
+    color: yellow;
+}
+
 /* Footer ball images */
 footer img.ball {
     width: 12px;
