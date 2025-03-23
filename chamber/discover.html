@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malolos Chamber of Commerce - Discover</title>
+  <meta name="description" content="Discover Malolos - A Chamber of Commerce Project">
+  <meta name="author" content="----------" />
+
+  <link rel="icon" href="images/mcc.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Malolos Chamber of Commerce - Discover" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://rltb-rommel.github.io/wdd230/chamber/images/barasoain_01.jpg" />
+  <meta property="og:url" content="https://rltb-rommel.github.io/wdd230/chamber/discover.html" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+</head>
+
+<body>
+  <header>
+    <button id="hamburger-menu" aria-label="Toggle Menu">☰</button>
+    <h1>Malolos Chamber of Commerce</h1>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <h2>About Malolos</h2>
+      <p>Population: 261,189 (2020)</p>
+      <p>Province: Bulacan</p>
+      <p>Known for: Barasoain Church, rich history, and culture.</p>
+      <p>Events: Malolos Congress Day, Singkaban Festival</p>
+      <div class="visit-message" id="visitMessage"></div>
+    </aside>
+
+    <section class="gallery">
+      <figure>
+        <img data-src="images/barasoain.webp" alt="Historical site in Malolos" loading="lazy" />
+        <figcaption>Barasoain Church</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/heritage.webp" alt="Local street view" loading="lazy" />
+        <figcaption>Heritage Street</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/general_felipe.webp" alt="Estrella_Bridge" loading="lazy" />
+        <figcaption>General Felipe Estrella Bridge</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/night_market.webp" alt="Night market" loading="lazy" />
+        <figcaption>Malolos Night Market</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/city_hall.webp" alt="City hall" loading="lazy" />
+        <figcaption>City Hall</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/museum.webp" alt="Local museum" loading="lazy" />
+        <figcaption>Malolos Museum</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/bulacan_capitol.webp" alt="Bulacan Provincial Capitol" loading="lazy" />
+        <figcaption>Bulacan Provincial Capitol</figcaption>
+      </figure>
+      <figure>
+        <img data-src="images/pook_gobierno_militar.webp" alt="Philippine Military Government Hall" loading="lazy" />
+        <figcaption>Philippine Military Government Hall</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>
+        &copy; <span id="year"></span> Malolos Chamber of Commerce 
+        <img class="ball" src="images/basketball.png" alt="Ball Icon"> | 
+        ----------- |   
+        <img class="ball" src="images/basketball.png" alt="Ball Icon"> 
+        WDD 230 Project | +639042693365 
+        <img class="flag" src="images/flag.png" alt="Country Flag">
+      </p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="scripts/getDates.js"></script>
+  <script src="scripts/menuToggle.js"></script>
+  <script>
+    // Lazy loading with IntersectionObserver
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = document.querySelectorAll('img[data-src]');
+      const options = { threshold: 0.1 };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+            obs.unobserve(img);
+          }
+        });
+      }, options);
+
+      images.forEach(img => observer.observe(img));
+    });
+
+    // localStorage visit tracking
+    const visitMsg = document.getElementById("visitMessage");
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = Date.now();
+
+    if (!lastVisit) {
+      visitMsg.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+      const days = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+      if (days === 0) {
+        visitMsg.textContent = "Back so soon! Awesome!";
+      } else if (days === 1) {
+        visitMsg.textContent = "You last visited 1 day ago.";
+      } else {
+        visitMsg.textContent = `You last visited ${days} days ago.`;
+      }
+    }
+
+    localStorage.setItem("lastVisit", now);
+  </script>
+</body>
+</html>
