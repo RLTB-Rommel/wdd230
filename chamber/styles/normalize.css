@@ -4,28 +4,28 @@
     box-sizing: border-box;
 }
 
-/* Improve default font rendering and scroll */
 html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Set default body font — theme styling belongs in base.css */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
-    color: #000; /* Neutral default */
+    color: #000;
     line-height: 1.6;
 }
 
-/* Set default link styles — themed hover color goes in base.css */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Headings inherit clean spacing and alignment */
+a:hover {
+    color: #0073e6;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: inherit;
     line-height: 1.2;

@@ -1,53 +1,14 @@
 @media (min-width: 768px) {
-    /* Header Layout */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 50px;
-    }
-
-    /* Hide Hamburger Menu on Large Screens */
-    #hamburger-menu {
-        display: none;
-    }
-
-    /* Navigation Styles for Large Screens */
-    #main-nav {
-        display: block !important;
-        position: static;
-        background: none;
-    }
-
-    #main-nav ul {
-        display: flex !important;
+    .footer-content {
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
         gap: 15px;
     }
 
-    #main-nav ul li {
-        display: inline;
+    #lastModified {
+        order: 1;
     }
 
-    #main-nav ul li a {
-        padding: 10px 15px;
-    }
-
-    /* Hero section text sizing */
-    .hero-text {
-        font-size: 1.5rem;
-        padding: 30px;
-    }
-
-    /* Main content layout adjustments */
-    .events,
-    .weather-card,
-    .spotlights {
-        max-width: 80%;
-    }
-
-    /* Spotlight Grid for Desktop */
     .spotlight-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -58,50 +19,26 @@
         padding: 20px;
     }
 
-    /* Footer container */
-    .footer-container {
-        text-align: center;
-    }
-
-    .inline-content {
+    header {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .inline-content p {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin: 0;
-    }
-
-    .ball,
-    .flag {
-        width: 20px;
-        height: auto;
-    }
-
-    #lastModified {
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    /* Footer layout adjustment for large screens */
-    footer {
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 20px;
-        max-width: 90%;
-        margin: 0 auto;
+        padding: 15px 50px;
     }
 
-    .footer-content {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+    #hamburger-menu {
+        display: none;
+    }
+
+    #main-nav {
+        display: block !important;
+        position: static;
+        flex-direction: row;
+    }
+
+    #main-nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
     }
 }
