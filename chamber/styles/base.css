@@ -17,9 +17,9 @@ header {
     position: relative;
 }
 
-/* Navigation */
+/* Hamburger Menu - visible on mobile only */
 #hamburger-menu {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 2rem;
@@ -30,28 +30,59 @@ header {
     left: 20px;
 }
 
-nav ul {
+/* Navigation Menu for Mobile */
+#main-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1E3A5F;
+    position: absolute;
+    top: 60px; /* below header */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+#main-nav.open {
+    display: flex;
+}
+
+#main-nav ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 0;
     margin: 0;
-    gap: 15px;
+    gap: 10px;
 }
 
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
+#main-nav ul li a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     transition: 0.3s;
+    display: block;
+    text-align: center;
 }
 
-nav ul li a:hover {
+#main-nav ul li a:hover {
     background-color: #3C6E71;
+}
+
+/* Dark mode button styles */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+}
+
+.dark-mode #dark-mode-toggle {
+    color: yellow;
 }
 
 /* Hero Section */
@@ -112,82 +143,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* ✅ Footer Fix: Align text properly */
-footer {
-    background-color: #1E3A5F; /* Dark blue-gray */
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column; /* Default: stacked on small screens */
-    align-items: center;
-    gap: 10px; /* Spacing between footer elements */
-}
-
-/* ✅ Footer Fix for Large Screens */
-@media (min-width: 768px) {
-    footer {
-        flex-direction: row; /* Align items in one row */
-        align-items: center space-between; /* Space them properly */
-        padding: 1rem 20px;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    
-    .footer-content {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-}
-
-/* Light Mode (Default) */
-body {
-    background-color: #ffffff;
-    color: #333;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-/* Dark mode header */
-.dark-mode header {
-    background-color: #1a1a1a;
-}
-
-/* Dark mode navigation */
-.dark-mode nav {
-    background-color: #222;
-}
-
-/* Dark mode sections */
-.dark-mode .events, 
-.dark-mode .weather-card, 
-.dark-mode .spotlights {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border: 1px solid #444;
-}
-
-/* Dark mode button styles */
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: white;
-}
-
-.dark-mode #dark-mode-toggle {
-    color: yellow;
-}
-
 /* Footer Base Styles */
 footer {
     background-color: #1E3A5F; /* Dark blue-gray */
@@ -195,38 +150,35 @@ footer {
     text-align: center;
     padding: 1rem;
     display: flex;
-    flex-direction: column; /* Default: Stack items for mobile */
+    flex-direction: column;
     align-items: center;
-    gap: 5px; /* Minimal spacing */
 }
 
-/* Center the main footer content in a row on larger screens */
+/* Footer Content Container */
 .footer-content {
     display: flex;
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-    justify-content: center; /* Centers content */
-    text-align: center; /* Ensures all text is centered */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
     max-width: 90%;
+    margin: 0 auto;
 }
 
-/* Ensure "Last Modified" appears at the bottom */
+/* Paragraphs inside footer */
+.footer-content p {
+    margin: 0.5em 0;
+}
+
+/* Last Modified inside .footer-content */
 #lastModified {
-    font-size: 0.9rem; /* Slightly smaller text */
-    color: #dfdf1b; /* Highlighted color */
-    margin-top: 10px; /* Space from main footer content */
+    flex: 0 0 100%;
+    margin:0 !important;
+    color:#dfdf1b;
+    font-weight: bold;
 }
 
-/* Responsive Footer - Keep everything in one line for larger screens */
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row; /* Align elements in one row */
-        gap: 15px; /* Adjust spacing between elements */
-    }
-}
-
-
-
-/* ✅ Footer Styles */
+/* Footer Icons */
 footer img.ball {
     width: 12px;
     height: 12px;
@@ -234,17 +186,48 @@ footer img.ball {
     vertical-align: middle;
 }
 
-/* Last modified text */
-footer p#lastModified {
-    color: #dfdf1b; /* Muted Purple-Gray */
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-/* Country flag */
+/* Country Flag Icon */
 footer img.flag {
     width: 20px;
     height: auto;
     margin-left: 5px;
     vertical-align: middle;
+}
+
+/* Responsive Layout for Large Screens */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* Ensure lastModified stays full-width and bottom-aligned */
+    #lastModified {
+        text-align: center;
+        order: 1; /* Pushes it below if needed */
+    }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header {
+    background-color: #1a1a1a;
+}
+
+.dark-mode nav {
+    background-color: #222;
+}
+
+.dark-mode .events,
+.dark-mode .weather-card,
+.dark-mode .spotlights {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
 }

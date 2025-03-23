@@ -1,5 +1,5 @@
 @media (min-width: 768px) {
-    /* Center header elements */
+    /* Header Layout */
     header {
         display: flex;
         justify-content: space-between;
@@ -7,23 +7,43 @@
         padding: 15px 50px;
     }
 
-    /* Navigation styles */
+    /* Hide Hamburger Menu on Large Screens */
     #hamburger-menu {
         display: none;
     }
 
-    nav ul {
-        justify-content: flex-end;
+    /* Navigation Styles for Large Screens */
+    #main-nav {
+        display: block !important;
+        position: static;
+        background: none;
     }
 
-    /* Hero section */
+    #main-nav ul {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    #main-nav ul li {
+        display: inline;
+    }
+
+    #main-nav ul li a {
+        padding: 10px 15px;
+    }
+
+    /* Hero section text sizing */
     .hero-text {
         font-size: 1.5rem;
         padding: 30px;
     }
 
-    /* Main content layout */
-    .events, .weather-card, .spotlights {
+    /* Main content layout adjustments */
+    .events,
+    .weather-card,
+    .spotlights {
         max-width: 80%;
     }
 
@@ -37,33 +57,51 @@
     .spotlight-item {
         padding: 20px;
     }
+
+    /* Footer container */
     .footer-container {
         text-align: center;
     }
-    
+
     .inline-content {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px; /* Adjust spacing */
+        gap: 15px;
         flex-wrap: wrap;
     }
-    
+
     .inline-content p {
         display: flex;
         align-items: center;
-        gap: 5px; /* Adjust spacing */
+        gap: 5px;
         margin: 0;
     }
-    
-    .ball, .flag {
-        width: 20px; /* Adjust size */
+
+    .ball,
+    .flag {
+        width: 20px;
         height: auto;
     }
-    
+
     #lastModified {
-        margin-top: 10px; /* Adjust spacing below */
+        margin-top: 10px;
         text-align: center;
     }
 
+    /* Footer layout adjustment for large screens */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 20px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
 }
