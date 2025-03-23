@@ -23,7 +23,7 @@
     .content-wrapper {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 20px; 
+        gap: 20px;
         max-width: 80%;
         margin: auto;
     }
@@ -36,16 +36,6 @@
         padding-right: 1rem;
         margin-left: 0;
         margin-right: 0;
-    }
-
-    .learning-card {
-        margin-left: 1rem;    /* Push away from left edge */
-        margin-right: 0;      /* Tight to the gap */
-    }
-    
-    .info-card {
-        margin-left: 0;       /* Tight to the gap */
-        margin-right: 1rem;   /* Push away from right edge */
     }
 
     /* Manila image and map sections span both columns */
@@ -126,4 +116,33 @@
         text-align: center;
     }
 
+} 
+
+.hero-label {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    font-family: 'Allura', cursive;
+    font-size: clamp(1.2rem, 2.2vw, 2.5rem);
+    font-weight: 400;
+    color: #2f2f2f;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.4em 1em;
+    border-radius: 18px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+    z-index: 10;
+    max-width: 90%;
+}
+
+@media (max-width: 480px) {
+    .hero-label {
+        top: 5%;
+        left: 5%;
+        font-size: 1.5rem;
+        padding: 0.3em 0.8em;
+    }
 }
