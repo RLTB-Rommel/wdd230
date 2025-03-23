@@ -1,72 +1,129 @@
 @media (min-width: 768px) {
-    /* Keep header center-aligned but ensure profile image stays beside name */
+    /* Header */
     header {
         justify-content: center;
     }
 
-    /* Profile image floating effect (shadow in larger view) */
     #photo {
-        border: none; /* Remove thin border */
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Floating effect */
+        border: none;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Center the main content */
+    /* Main layout */
     main {
-        max-width: 75%;
-        margin: auto;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    /* Main layout - Learning Activities card is twice as wide */
+    /* Grid layout for content wrapper */
     .content-wrapper {
         display: grid;
-        grid-template-columns: 2fr 1fr; /* Learning Activities (2x), Information (1x) */
-        gap: 20px;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px; 
         max-width: 80%;
         margin: auto;
     }
 
-    /* Add shadow effect to cards in larger view */
+    /* Cards get spacing and shadow */
     .card {
-        border: none; /* Remove thin border */
+        border: none;
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    /* Ensure space between cards */
+    .learning-card {
+        margin-left: 1rem;    /* Push away from left edge */
+        margin-right: 0;      /* Tight to the gap */
+    }
+    
+    .info-card {
+        margin-left: 0;       /* Tight to the gap */
+        margin-right: 1rem;   /* Push away from right edge */
+    }
+
+    /* Manila image and map sections span both columns */
+    .full-width-media,
+    .hero-card,
+    .map-card {
+        grid-column: 1 / -1;
+    }
+
+    /* No box shadow for media sections */
+    .hero-card,
+    .map-card {
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+    }
+
+    /* Hero image styling */
+    .hero-container picture img {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .hero-section {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Cards side by side — no top margin between them */
     .card + .card {
-        margin-top: 0; /* No need for margin since they are side by side */
+        margin-top: 0;
     }
 
-    /* H2 background color remains */
     .card h2 {
-        background-color: #A4C3B2; /* Subtle greenish-gray */
+        background-color: #A4C3B2;
     }
 
+    /* Map iframe spacing */
+    .map-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .map-container iframe {
+        height: 400px;
+        width: 100%;
+    }
+
+    /* Footer layout */
     .footer-container {
         text-align: center;
     }
-    
+
     .inline-content {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px; /* Adjust spacing */
+        gap: 15px;
         flex-wrap: wrap;
     }
-    
+
     .inline-content p {
         display: flex;
         align-items: center;
-        gap: 5px; /* Adjust spacing */
+        gap: 5px;
         margin: 0;
     }
-    
+
     .ball, .flag {
-        width: 20px; /* Adjust size */
+        width: 20px;
         height: auto;
     }
-    
+
     #lastModified {
-        margin-top: 10px; /* Adjust spacing below */
+        margin-top: 10px;
         text-align: center;
     }
+
 }

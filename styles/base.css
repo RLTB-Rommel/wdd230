@@ -1,52 +1,50 @@
-/* Base styles (Mobile-first) */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Normalize base styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #F8F9FA; /* Light grayish white */
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8F9FA;
     color: #333;
 }
 
 /* Dark mode styles */
 .dark-mode {
-    background-color: #0D1B2A; /* Dark blue-black for consistency */
-    color: #A8DADC; /* Light blue for readability */
+    background-color: #0D1B2A;
+    color: #A8DADC;
 }
 
-/* Adjusting contrast */
 h1 {
-    color: #457B9D; /* Brighter light blue */
-    text-align: center; /* Always center align h1 */
+    color: #457B9D;
+    text-align: center;
 }
 
 h2 {
-    color: #1e6fea; /* Slightly darker light blue */
+    color: #1e6fea;
 }
 
 .dark-mode h1 {
-    color: #89CFF0; /* Bright sky blue */
-    text-align: center; /* Ensure h1 remains center-aligned in dark mode */
+    color: #89CFF0;
 }
 
 .dark-mode h2 {
-    color: #A8DADC; /* Lighter blue for readability */
+    color: #A8DADC;
 }
 
-.dark-mode p, .dark-mode span, .dark-mode li {
-    color: #B0E0E6; /* Bright light blue for contrast */
+.dark-mode p,
+.dark-mode span,
+.dark-mode li {
+    color: #B0E0E6;
 }
 
-/* Week 01 to Week 06 Styling */
-.dark-mode .week-links a {
-    color: #A8DADC; 
-    transition: color 0.3s ease-in-out;
-}
-
-.dark-mode .week-links a:hover {
-    color: #457B9D; /* Darker blue on hover */
-}
-
-/* Center-aligned header */
+/* Header */
 header {
     background-color: #255aa0;
     color: white;
@@ -59,7 +57,6 @@ header {
     position: relative;
 }
 
-/* Profile image */
 #photo {
     width: 75px;
     height: 100px;
@@ -68,7 +65,6 @@ header {
     border: 1px solid #A4C3B2;
 }
 
-/* Name styling */
 header span {
     font-size: 1.5rem;
     font-weight: bold;
@@ -105,25 +101,18 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    display: inline;
-}
-
-/* Navigation link styles */
 nav ul li a {
     color: rgb(172, 207, 13);
     text-decoration: none;
-    display: block;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Background changes on hover */
 nav ul li a:hover {
     background-color: #3C6E71;
 }
 
-/* Hide menu in mobile */
+/* Mobile Navigation */
 @media (max-width: 768px) {
     #hamburger-menu {
         display: block;
@@ -138,7 +127,6 @@ nav ul li a:hover {
     nav ul {
         flex-direction: column;
         text-align: center;
-        padding: 0;
     }
 
     nav ul li {
@@ -153,48 +141,39 @@ nav ul li a:hover {
 /* Main layout */
 main {
     max-width: 90%;
-    margin: 20px auto;
-    padding: 1rem;
+    margin: 0 auto;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Card styling */
+/* Heading + line block */
+.heading-block {
+    text-align: center;
+    margin: 20px 0;
+    grid-column: 1 / -1;
+}
+
+.line {
+    height: 2px;
+    background-color: #457B9D;
+    width: 100%;
+    margin: 10px auto;
+}
+
+/* Cards */
 .card {
     background-color: #D9E2EC;
     border-radius: 8px;
     padding: 1rem;
     border: 1px solid #A4C3B2;
-    margin-bottom: 20px; /* Ensure space between cards */
+    margin-bottom: 20px;
     padding-bottom: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-/* Ensure Week 01 to Week 06 align properly */
-.card ul {
-    margin-left: 20px; /* Adjust for left alignment */
-    margin-top: 10px; /* Adds space above the list */
-    padding-left: 0; /* Reset padding */
-    list-style-position: inside; /* Align bullet points */
-}
-
-/* Add left margin to Weather and Number of Visits */
-.card p {
-    margin-left: 20px; /* Matches the left margin of Week 01 */
-    margin-top: 10px; /* Adds space above the first paragraph */
-}
-
-
-
-.dark-mode .card {
-    background-color: #1B263B; /* Dark blue-gray */
-    border-color: #415A77;
-    margin-bottom: 20px; /* Ensure space between cards */
-    color: #B0E0E6; /* Light blue text for readability */
-    padding-bottom: 10px;
-}
-
-/* H2 background color */
 .card h2 {
     background-color: #A4C3B2;
     padding: 0.5rem;
@@ -202,37 +181,68 @@ main {
     text-align: center;
 }
 
-.dark-mode .card h2 {
-    background-color: #415A77; /* Darker blue-gray */
-    color: #FFFFFF; /* White for contrast */
+.card ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-position: inside;
 }
 
+.card p {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Dark mode card */
+.dark-mode .card {
+    background-color: #1B263B;
+    border-color: #415A77;
+    color: #B0E0E6;
+}
+
+.dark-mode .card h2 {
+    background-color: #415A77;
+    color: #FFFFFF;
+}
+
+.dark-mode .week-links a {
+    color: #A8DADC;
+    transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .week-links a:hover {
+    color: #457B9D;
+}
+
+/* Footer */
 footer {
-    background-color: #1E3A5F; /* Dark blue-gray */
+    background-color: #1E3A5F;
     color: white;
     text-align: center;
     padding: 1rem;
     display: flex;
-    flex-direction: column; /* Stack items vertically in mobile */
+    flex-direction: column;
     align-items: center;
-    gap: 3px; /* Reduced spacing for cleaner stacking */
+    gap: 3px;
 }
 
-/* Footer text contrast in bright mode */
 footer p {
-    color: #FFFFFF; /* Ensure text is readable in bright mode */
-}
-footer p#lastModified {
-    color: #FFD700; /* Bright yellow-gold for contrast */
+    color: #FFFFFF;
 }
 
+footer p#lastModified {
+    color: #FFD700;
+}
 
 .dark-mode footer {
-    background-color: #1e6fea; /* Dark blue-black */
-    color: #FFD700; /* Bright yellow-gold */
+    background-color: #1e6fea;
+    color: #FFD700;
 }
 
-/* Footer images */
+.dark-mode footer p#lastModified {
+    color: #FFD700;
+}
+
 footer img.ball {
     width: 12px;
     height: 12px;
@@ -247,7 +257,89 @@ footer img.flag {
     vertical-align: middle;
 }
 
-/* Ensure footnote visibility in dark mode */
-.dark-mode footer p#lastModified {
-    color: #FFD700; /* Bright yellow-gold for contrast */
+/* Footer layout */
+.inline-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.inline-content p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+/* Media section styling (Manila image + map) */
+.media-section {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+/* Map container has spacing */
+.map-container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+}
+
+/* Hero container has no side padding */
+.hero-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Hero image and map iframe */
+.hero-container picture img,
+.map-container iframe {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    object-fit: cover;
+}
+
+/* Manila label overlay */
+.hero-label {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    font-family: 'Allura', cursive; /* or 'Parisienne', cursive */
+    font-size: clamp(1.2rem, 2.2vw, 2.5rem); /* Responsive font scaling */
+    font-weight: 400;
+    color: #2f2f2f;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.4em 1em;
+    border-radius: 18px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+    z-index: 10;
+    max-width: 90%;
+}
+
+/*Smaller and tighter on mobile */
+@media (max-width: 480px) {
+    .hero-label {
+        top: 5%;
+        left: 5%;
+        font-size: 1.5rem;
+        padding: 0.3em 0.8em;
+    }
 }
