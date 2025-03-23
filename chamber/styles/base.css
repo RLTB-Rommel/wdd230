@@ -143,6 +143,10 @@ header {
     text-align: center;
 }
 
+.spotlights h2 {
+    margin-bottom: 1rem; 
+}
+
 /* Footer Base Styles */
 footer {
     background-color: #1E3A5F; /* Dark blue-gray */
