@@ -104,8 +104,10 @@ nav ul {
 nav ul li a {
     color: rgb(172, 207, 13);
     text-decoration: none;
-    padding: 0.75rem 1.2rem;
+    padding: 1rem 1.2rem;
     display: inline-block;
+    min-height: 48px;
+    min-width: 48px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -118,6 +120,9 @@ nav ul li a:hover {
     #hamburger-menu {
         display: block;
         padding: 12px;
+        font-size: 2rem;
+        min-height: 48px;
+        min-width: 48px;
     }
 
     nav {
@@ -133,6 +138,7 @@ nav ul li a:hover {
 
     nav ul li {
         padding: 10px 0;
+        margin-bottom: 10px;
     }
 
     nav.open {
