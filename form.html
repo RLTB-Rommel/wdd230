@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Submission</title>
+
+  <!-- Meta Info -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rommel F. Aunario - WDD 230 - Web Frontend Development</title>
+        <meta name="description" content="WDD 230 - Web Frontend Development | Rommel F. Aunario | Course Assignment Portal">
+        <meta name="author" content="Rommel F. Aunario">
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Rommel F. Aunario - WDD 230 - Web Frontend Development">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://rltb-rommel.github.io/wdd230/images/profile_byu.webp">
+        <meta property="og:url" content="https://rltb-rommel.github.io/wdd230/">
+        <meta property="og:description" content="WDD 230 - Web Frontend Development | Course Assignment Portal for Rommel F. Aunario.">
+        <meta property="og:site_name" content="Rommel F. Aunario's Portfolio">
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Libre+Baskerville&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    <img id="photo" src="images/profile_byu.webp" alt="Rommel F. Aunario Profile" />
+    <span>Rommel F. Aunario</span>
+  </header>
+
+  <button id="hamburger-menu" aria-label="Toggle Menu">☰</button>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chamber/index.html">Chamber</a></li>
+      <li><a href="week01/chamber-site-plan.html">Site Plan</a></li>
+      <li><a href="form.html">Form</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="form-wrapper">
+    <h1>Account Setup</h1>
+    <form method="get" action="record.html" id="accountForm">
+      <label for="username">Username:
+        <input type="text" id="username" name="username" required />
+      </label>
+
+      <label for="password">Password:
+        <input type="password" id="password" name="password" required pattern="[A-Za-z0-9]{8,}" title="At least 8 alphanumeric characters" />
+      </label>
+
+      <label for="confirm">Confirm Password:
+        <input type="password" id="confirm" name="confirm" required />
+      </label>
+
+      <label for="email">BYUI Email:
+        <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@byui\.edu" title="Please enter a valid @byui.edu email address" />
+      </label>
+
+      <label for="rating">Page Rating:
+        <input type="range" id="rating" name="rating" min="1" max="10" step="1" value="5" oninput="document.getElementById('ratingValue').textContent = this.value" />
+        <span id="ratingValue">5</span>
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inline-content">
+      <p>&copy; <span id="year"></span></p>
+      <p><img class="ball" src="images/basketball.png" alt="Ball Icon" /> Rommel F. Aunario <img class="ball" src="images/basketball.png" alt="Ball Icon" /></p>
+      <p>Philippines <img class="flag" src="images/flag.png" alt="Country Flag" /></p>
+    </div>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/getDates.js"></script>
+  <script src="scripts/menuToggle.js"></script>
+  <script src="scripts/darkMode.js"></script>
+  <script>
+    const form = document.getElementById('accountForm');
+    const password = document.getElementById('password');
+    const confirm = document.getElementById('confirm');
+
+    form.addEventListener('submit', (e) => {
+      if (password.value !== confirm.value) {
+        alert('Passwords do not match!');
+        password.value = '';
+        confirm.value = '';
+        password.focus();
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
