@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malolos Chamber of Commerce - Join</title>
+    <meta name="description" content="Welcome to the Malolos Chamber of Commerce. Join us to engage with the community and grow your business.">
+    <meta name="author" content="Rommel F. Aunario">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/mcc.ico" type="image/x-icon">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Malolos Chamber of Commerce - Join">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rltb-rommel.github.io/wdd230/chamber/images/barasoain_01.jpg">
+    <meta property="og:url" content="https://rltb-rommel.github.io/wdd230/chamber/join.html">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <style>
+      .join-form {
+        background-color: var(--accent-color, #f0f0f0);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #A4C3B2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .join-form fieldset {
+        border: none;
+        padding: 0;
+      }
+
+      .join-form legend {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color, #004080);
+        margin-bottom: 1rem;
+      }
+
+      .join-form label {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .join-form input,
+      .join-form select,
+      .join-form textarea {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 1rem;
+        background-color: white;
+        color: #333;
+      }
+
+      .join-form input[type="submit"] {
+        background-color: var(--primary-color, #004080);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .join-form input[type="submit"]:hover {
+        background-color: #0066cc;
+      }
+
+      .membership-benefits {
+        background-color: var(--accent-color, #f0f0f0);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border: 1px solid #A4C3B2;
+      }
+    </style>
+</head>
+<body>
+<header>
+  <button id="hamburger-menu" aria-label="Toggle Menu">☰</button>
+  <h1>Malolos Chamber of Commerce</h1>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="https://rltb-rommel.github.io/wdd230/">Home</a></li>
+      <li><a href="discover.html">Discover</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main style="min-height: 400px; display: flex; justify-content: center; align-items: flex-start; padding: 2rem;">
+  <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; width: 100%; max-width: 1000px;">
+
+    <!-- Form Section -->
+    <form method="get" action="thankyou.html" class="join-form">
+      <fieldset>
+        <legend><strong>Membership Application</strong></legend>
+
+        <label>
+          First Name:
+          <input type="text" name="firstName" id="firstName" required>
+        </label>
+
+        <label>
+          Last Name:
+          <input type="text" name="lastName" id="lastName" required>
+        </label>
+
+        <label>
+          Title/Position:
+          <input type="text" name="position" id="position" pattern="[A-Za-z\s\-]{7,}" title="At least 7 letters, hyphens or spaces.">
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" id="email" required placeholder="you@example.com">
+        </label>
+
+        <label>
+          Mobile Phone:
+          <input type="tel" name="phone" id="phone" required>
+        </label>
+
+        <label>
+          Organization Name:
+          <input type="text" name="orgName" id="orgName" required>
+        </label>
+
+        <label>
+          Membership Level:
+          <select name="membershipLevel" id="membershipLevel" required>
+            <option value="" disabled selected>Select a level</option>
+            <option value="np">NP Membership (Non-Profit - Free)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <label>
+          Organization Description:
+          <textarea name="description" id="description" rows="4"></textarea>
+        </label>
+
+        <input type="hidden" name="timestamp" id="timestamp">
+
+        <input type="submit" value="Submit Application">
+      </fieldset>
+    </form>
+
+    <!-- Benefits Section -->
+    <section class="membership-benefits">
+      <h2>Membership Benefits</h2>
+      <ul>
+        <li><strong>NP Membership:</strong> Free – For non-profits. Basic access.</li>
+        <li><strong>Bronze:</strong> Event invitations, monthly newsletter.</li>
+        <li><strong>Silver:</strong> Includes Bronze benefits + featured directory listing, workshop discounts.</li>
+        <li><strong>Gold:</strong> All Silver benefits + homepage spotlight ads, free event booths, premium training access.</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('timestamp').value = new Date().toISOString();
+  </script>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>
+      &copy; <span id="year"></span> | Malolos Chamber of Commerce 
+      <img class="ball" src="images/basketball.png" alt="Ball Icon"> | 
+      Rommel F. Aunario |  
+      <img class="ball" src="images/basketball.png" alt="Ball Icon"> 
+      WDD 230 Project | +639042693365 
+      <img class="flag" src="images/flag.png" alt="Country Flag">
+    </p>
+    <p id="lastModified"></p>
+  </div>
+</footer>
+
+<script src="scripts/getDates.js"></script>
+<script src="scripts/menuToggle.js"></script>
+</body>
+</html>
