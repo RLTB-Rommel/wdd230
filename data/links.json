@@ -1,0 +1,61 @@
+{
+    "weeks": [
+      {
+        "week": "Week 1",
+        "links": [
+          {
+            "url": "week01/holygrail.html",
+            "title": "HG Layout"
+          },
+          {
+            "url": "week01/media-query.html",
+            "title": "mQueries"
+          }
+        ]
+      },
+      {
+        "week": "Week 2",
+        "links": [
+          {
+            "url": "week02/design-principles.html",
+            "title": "Design Principles"
+          },
+          {
+            "url": "week02/media-query.html",
+            "title": "Responsive Design"
+          }
+        ]
+      },
+      {
+        "week": "Week 3",
+        "links": [
+          {
+            "url": "week03/lazyload.html",
+            "title": "Lazy Load"
+          },
+          {
+            "url": "week03/responsive-images.html",
+            "title": "Responsive Images"
+          }
+        ]
+      },
+      {
+        "week": "Week 4",
+        "links": [
+          {
+            "url": "week04/tablebuild.html",
+            "title": "HTML Tables"
+          }
+        ]
+      },
+      {
+        "week": "Week 5",
+        "links": [
+          {
+            "url": "week05/bom.html",
+            "title": "Book of Mormon Activity"
+          }
+        ]
+      }
+    ]
+  }
