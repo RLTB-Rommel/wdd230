@@ -1,0 +1,52 @@
+{
+    "companies": [
+      {
+        "name": "Globe Telecom",
+        "address": "The Globe Tower, Bonifacio Global City, Taguig",
+        "phone": "(02) 730-1000",
+        "website": "https://www.globe.com.ph",
+
+        "image": "globe.webp"
+      },
+      {
+        "name": "Jollibee Foods Corporation",
+        "address": "Jollibee Plaza, Ortigas Center, Pasig",
+        "phone": "(02) 634-1111",
+        "website": "https://www.jollibee.com.ph",
+
+        "image": "jollibee.webp"
+      },
+      {
+        "name": "Ayala Corporation",
+        "address": "6750 Ayala Avenue, Makati City",
+        "phone": "(02) 757-0100",
+        "website": "https://www.ayala.com.ph",
+
+        "image": "Ayala.webp"
+      },
+
+      {
+        "name": "PLDT Inc.",
+        "address": "Ramon Cojuangco Building, Makati Ave., Makati",
+        "phone": "(02) 888-8171",
+        "website": "https://www.pldt.com",
+
+        "image": "PLDT.webp"
+      },
+      {
+        "name": "Shakey's Philippines",
+        "address": "Shakey's Bldg., 2286 Urdaneta St., Makati City",
+        "phone": "(02) 7777-7777",
+        "website": "https://www.shakeyspizza.ph",
+        "image": "shakeys.webp"
+      },
+      {
+        "name": "Bench/ Suyen Corporation",
+        "address": "G/F Bench Tower, 30th St. cor. Rizal Dr., BGC, Taguig",
+        "phone": "(02) 889-9999",
+        "website": "https://www.bench.com.ph",
+
+        "image": "bench.webp"
+      }
+    ]
+  }

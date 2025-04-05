@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malolos Chamber of Commerce - Directory</title>
+    <meta name="description" content="Member Directory - Malolos Chamber of Commerce">
+    <meta name="author" content="Rommel F. Aunario">
+
+    <link rel="icon" href="images/mcc.ico" type="image/x-icon">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Malolos Chamber of Commerce - Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rltb-rommel.github.io/wdd230/chamber/images/barasoain_01.jpg">
+    <meta property="og:url" content="https://rltb-rommel.github.io/wdd230/chamber/directory.html">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body class="directory-page">
+    <header>
+        <button id="hamburger-menu" aria-label="Toggle Menu">☰</button>
+        <h1>Malolos Chamber of Commerce</h1>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2 style="text-align: center; margin-top: 1rem;">Business Directory</h2>
+        <div class="directory-controls">
+            <button id="grid-view">⏹️ Grid</button>
+            <button id="list-view">📄 List</button>
+        </div>
+
+        <section id="directory" class="grid"></section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>
+                &copy; <span id="year"></span> | Malolos Chamber of Commerce 
+                <img class="ball" src="images/basketball.png" alt="Ball Icon"> | 
+                Rommel F. Aunario |  
+                <img class="ball" src="images/basketball.png" alt="Ball Icon"> 
+                WDD 230 Project | +639042693365 
+                <img class="flag" src="images/flag.png" alt="Country Flag">
+            </p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+    <script>
+        const directory = document.querySelector("#directory");
+
+        async function getMembers() {
+            const response = await fetch("data/members.json");
+            const data = await response.json();
+            displayMembers(data.companies);
+        }
+
+        function displayMembers(companies) {
+            directory.innerHTML = "";
+            companies.forEach(company => {
+                let card = document.createElement("div");
+                card.classList.add("member-card");
+
+                card.innerHTML = `
+                    <img src="images/${company.image}" alt="${company.name} logo" loading="lazy">
+                    <h3>${company.name}</h3>
+                    <p>${company.address}</p>
+                    <p>${company.phone}</p>
+                    <a href="${company.website}" target="_blank">Website</a>
+                `;
+
+                directory.appendChild(card);
+            });
+        }
+
+        document.getElementById("grid-view").addEventListener("click", () => {
+            directory.classList.remove("list");
+            directory.classList.add("grid");
+        });
+
+        document.getElementById("list-view").addEventListener("click", () => {
+            directory.classList.remove("grid");
+            directory.classList.add("list");
+        });
+
+        getMembers();
+    </script>
+
+    <script src="scripts/getDates.js"></script>
+    <script src="scripts/menuToggle.js"></script>
+    <script src="scripts/directory.js"></script>
+</body>
+</html>
