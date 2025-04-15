@@ -52,4 +52,20 @@
       transform: scale(1.05);
       transition: transform 0.3s ease;
     }
+    .weather-wrapper {
+      flex-direction: row;
+    }
+    
+    #forecast-list {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    #forecast-list li {
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }

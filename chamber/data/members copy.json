@@ -2,7 +2,6 @@
     "companies": [
       {
         "name": "Globe Telecom",
-        "membership": "gold",
         "address": "The Globe Tower, Bonifacio Global City, Taguig",
         "phone": "(02) 730-1000",
         "website": "https://www.globe.com.ph",
@@ -11,7 +10,6 @@
       },
       {
         "name": "Jollibee Foods Corporation",
-        "membership": "silver",
         "address": "Jollibee Plaza, Ortigas Center, Pasig",
         "phone": "(02) 634-1111",
         "website": "https://www.jollibee.com.ph",
@@ -20,7 +18,6 @@
       },
       {
         "name": "Ayala Corporation",
-        "membership": "bronze",
         "address": "6750 Ayala Avenue, Makati City",
         "phone": "(02) 757-0100",
         "website": "https://www.ayala.com.ph",
@@ -30,7 +27,6 @@
 
       {
         "name": "PLDT Inc.",
-        "membership": "gold",
         "address": "Ramon Cojuangco Building, Makati Ave., Makati",
         "phone": "(02) 888-8171",
         "website": "https://www.pldt.com",
@@ -39,7 +35,6 @@
       },
       {
         "name": "Shakey's Philippines",
-        "membership": "silver",
         "address": "Shakey's Bldg., 2286 Urdaneta St., Makati City",
         "phone": "(02) 7777-7777",
         "website": "https://www.shakeyspizza.ph",
@@ -47,38 +42,11 @@
       },
       {
         "name": "Bench/ Suyen Corporation",
-        "membership": "bronze",
         "address": "G/F Bench Tower, 30th St. cor. Rizal Dr., BGC, Taguig",
         "phone": "(02) 889-9999",
         "website": "https://www.bench.com.ph",
 
         "image": "bench.webp"
-      },
-
-      {
-        "name": "Toy Kingdom",
-        "membership": "silver",
-        "address": "SM Megamall, EDSA cor. Julia Vargas Ave., Mandaluyong City",
-        "phone": "(02) 888-8297",
-        "website": "https://www.toykingdom.com.ph",
-        "image": "toykingdom.webp"
-      },
-      {
-        "name": "SM Investments Corporation",
-        "membership": "gold",
-        "address": "SM Corporate Offices, Bay City, Pasay City",
-        "phone": "(02) 8857-0100",
-        "website": "https://www.sminvestments.com",
-        "image": "sm.webp"
-      },
-      {
-        "name": "Toys “R” Us Philippines",
-        "membership": "silver",
-        "address": "Robinsons Galleria, Ortigas Center, Quezon City",
-        "phone": "(02) 8709-2036",
-        "website": "https://www.toysrus.com.ph",
-        "image": "toysrus.webp"
       }
-
     ]
   }
