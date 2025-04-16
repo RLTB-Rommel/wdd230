@@ -1,0 +1,60 @@
+{
+    "families": [
+      {
+        "familyName": "Del Rosario",
+        "moveInDate": "2023-05-15",
+        "numberOfMembers": 5,
+        "visitedByBishopric": true,
+        "members": [
+          {
+            "name": "Juan Del Rosario",
+            "gender": "Male",
+            "birthdate": "1980-04-12"
+          },
+          {
+            "name": "Maria Del Rosario",
+            "gender": "Female",
+            "birthdate": "1983-09-25"
+          },
+          {
+            "name": "Jose Del Rosario",
+            "gender": "Male",
+            "birthdate": "2008-01-10"
+          },
+          {
+            "name": "Ana Del Rosario",
+            "gender": "Female",
+            "birthdate": "2011-03-07"
+          },
+          {
+            "name": "Luis Del Rosario",
+            "gender": "Male",
+            "birthdate": "2015-11-22"
+          }
+        ]
+      },
+      {
+        "familyName": "Santos",
+        "moveInDate": "2022-09-08",
+        "numberOfMembers": 3,
+        "visitedByBishopric": false,
+        "members": [
+          {
+            "name": "Carlos Santos",
+            "gender": "Male",
+            "birthdate": "1975-06-14"
+          },
+          {
+            "name": "Lucia Santos",
+            "gender": "Female",
+            "birthdate": "1977-12-19"
+          },
+          {
+            "name": "Miguel Santos",
+            "gender": "Male",
+            "birthdate": "2006-08-05"
+          }
+        ]
+      }
+    ]
+  }
