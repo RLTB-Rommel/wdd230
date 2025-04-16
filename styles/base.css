@@ -240,12 +240,13 @@ main {
 }
 
 .dark-mode .week-links a {
-    color: #A8DADC;
-    transition: color 0.3s ease-in-out;
+    background-color: #1F4E79;   /* NEW background for dark mode */
+    color: #FFFFFF;              /* NEW text color for contrast */
 }
 
 .dark-mode .week-links a:hover {
-    color: #457B9D;
+    background-color: #3E8ED0;   /* Slightly lighter on hover */
+    color: #FFFFFF;
 }
 
 /* Footer */
